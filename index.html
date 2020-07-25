@@ -38,10 +38,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 	mix-blend-mode: screen;
 	height:20%;
 }
-.loginBtn:hover {
-	background-color: #b6b8b3;
-	<!--color: #181818;-->
-}
+
 .loginbox{
 	position:absolute;
 	width:100%;
@@ -75,7 +72,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 </head>
 <body>
 <div class="image-container">
- 	<div style="cursor:pointer" class="loginBtn" type="button" id = "loginbtn">
+ 	<div style="cursor:pointer" class="loginBtn" type="button" id = "loginbtn" onmousedown="this.style.background='#1a1a1a'"  onmouseleave="this.style.background='#ffffff'" onmouseover="this.style.background='#b6b8b3'">
   	Connect
 	</div>
 	<div class="loginbox"  id = "loginbox">
