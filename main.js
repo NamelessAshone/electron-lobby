@@ -5,15 +5,15 @@ let mainWindow
 
 function createWindow () {
   mainWindow = new BrowserWindow({
-    width: 1000,
-    height: 600,
+    
     webPreferences: {
 
       nodeIntegration: true
     }
+    
   })
 
-
+mainWindow.maximize()
   mainWindow.loadFile('index.html')
 
   mainWindow.on('closed', function () {
