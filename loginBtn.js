@@ -1,4 +1,4 @@
-//import {login} from './client.js';
+import {initNet,receive} from './network.js';
 document.getElementById("loginbox").style.visibility = "hidden"; 
 var loginBtn=document.getElementById("loginbtn");
 loginBtn.addEventListener("mousedown",click);
@@ -26,6 +26,7 @@ function clicked()
 	
 	
 	}
+	
 function fadeLeave()
 	{
 	loginBtn.style.opacity=1-i*0.04;
@@ -62,6 +63,7 @@ function ariseEnter()
 
 function accountChk()
 	{
+	initNet(); receive();
 	var usr=document.getElementById("usr");
 	var passwd=document.getElementById("passwd");
 	if (login(usr.value,passwd.value))
