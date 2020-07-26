@@ -6,7 +6,7 @@ loginBtn.addEventListener("mousedown",click);
 loginBtn.addEventListener("mouseup",clicked);
 var passwdForm=document.getElementById("passwd")
 passwdForm.addEventListener('change', accountChk);
-
+document.getElementById("loginTerminal").style.visibility = "hidden"; 
 const crypto = require('crypto');
 
 var i=0
@@ -68,7 +68,14 @@ function accountChk()
 	var usr=document.getElementById("usr");
 	var passwd=document.getElementById("passwd");
 	send("LOGIN "+usr.value+" "+crypto.createHash('md5').update(passwd.value).digest("base64")+" * 0\n");
-	
+	}
+export function finalBoxEnlargeLeave()
+	{
+	document.getElementById("loginbox").style.visibility = "hidden"; 
+	document.getElementById("loginTerminal").style.visibility = "visible"; 
+	document.getElementById("loginTerminal").innerHTML = window.serverReply;
+	document.getElementById("loginTerminal").innerHTML +="</br>Check Update: ||||||||||||||||||||</br> NONE";
+	document.getElementById("loginTerminal").innerHTML +="</br>Starting interface renderer</br> 0%";
 	}
 	
 

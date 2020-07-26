@@ -5,6 +5,7 @@
 <style>
 @font-face { font-family: JuneBug; src: url('assets/iosevka-ss09-extralight.ttf'); }
 @font-face { font-family: JuneBug2; src: url('assets/Monoid-Regular.ttf'); }
+@font-face { font-family: JuneBug3; src: url('assets/Envy Code R.ttf'); }
 body {font-family: Arial, Helvetica, sans-serif;}
 
 .image-container {
@@ -72,9 +73,13 @@ body {font-family: Arial, Helvetica, sans-serif;}
 </head>
 <body>
 <div class="image-container">
+
+
  	<div style="cursor:pointer" class="loginBtn" type="button" id = "loginbtn" onmousedown="this.style.background='#1a1a1a'"  onmouseleave="this.style.background='#ffffff'" onmouseover="this.style.background='#b6b8b3'">
   	Connect
-	</div>
+	</div>  
+
+
 	<div class="loginbox"  id = "loginbox">
 		<div class="shader"></div>
 		<div class="logininput">
@@ -87,7 +92,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
 				<p style="top:70%; position:absolute;left:45%;font-size: 1vw;text-align: left">///   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///</p>
 		</div>	
 	</div>
-	
+
+	<p id="loginTerminal" style="white-space: pre-wrap; word-wrap: normal; position:absolute;top:0%;left:10%;font-family: JuneBug3;font-size: 1.2vw; color: white;"></p>	
 </div>
 
 

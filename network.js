@@ -1,4 +1,4 @@
-
+import {finalBoxEnlargeLeave} from './loginBtn.js';
 	var net = require('net');
 	var client = new net.Socket();
 
@@ -21,9 +21,11 @@
 	export function receive()
 	{
 		client.on('data', function(data) {window.serverReply=data; console.log('DATA from receive: ' + window.serverReply);
-		if (window.serverReply.toString().startsWith("ACCEPTED"))
+		if (window.serverReply.toString().includes("ACCEPTED"))
 			{
 			console.log(">>>>>>>>>>>>>LOGIN SUCCESSFUL!")
+			finalBoxEnlargeLeave();
+			
 			}
 		
 		
