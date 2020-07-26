@@ -1,25 +1,24 @@
-var net = require('net');
-var HOST = '127.0.0.1';
-var PORT = 6000;
 
-var client = new net.Socket();
-client.connect(PORT, HOST, function() {
+	var net = require('net');
+	var client = new net.Socket();
+	var serverReply;
 
-    console.log('CONNECTED TO: ' + ultirts.net + ':' + 8200);
+	export function initNet(msg)
+	{
+		client.connect('8200', 'ultirts.net', function() {console.log('CONNECTED TO: ' + 'ultirts.net' + ':' + '8200');} );
+	}
+	export function send(msg)
+	{
+	client.write(msg);client.end()	
+	}
+	export function receive()
+	{
+		client.on('data', function(data) {console.log('DATA: ' + data); serverReply=data;} );
 
-    client.write('Hello!');
+	}
+	export function logout()
+	{
+		client.destroy();
+		client.on('close', function() {console.log('Connection closed');});
+	}
 
-});
-
-
-client.on('data', function(data) {
-
-    console.log('DATA: ' + data);
-
-    client.destroy();
-});
-
-
-client.on('close', function() {
-    console.log('Connection closed');
-});
