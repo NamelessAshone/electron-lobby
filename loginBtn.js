@@ -11,6 +11,7 @@ const crypto = require('crypto');
 
 var i=0
 var j=0
+var k=0
 function click(){
 	loginBtn.style.background='#1a1a1a';
 	}
@@ -69,13 +70,32 @@ function accountChk()
 	var passwd=document.getElementById("passwd");
 	send("LOGIN "+usr.value+" "+crypto.createHash('md5').update(passwd.value).digest("base64")+" * 0\n");
 	}
-export function finalBoxEnlargeLeave()
+export function passwded()
 	{
-	document.getElementById("loginbox").style.visibility = "hidden"; 
-	document.getElementById("loginTerminal").style.visibility = "visible"; 
-	document.getElementById("loginTerminal").innerHTML = window.serverReply;
-	document.getElementById("loginTerminal").innerHTML +="</br>Check Update: ||||||||||||||||||||</br> NONE";
-	document.getElementById("loginTerminal").innerHTML +="</br>Starting interface renderer</br> 0%";
+	window.timer3 = setInterval(finalBoxEnlargeLeave,10);
+	}
+function finalBoxEnlargeLeave()
+	{
+	document.getElementById("shader").style.opacity=1-k*0.01;
+	document.getElementById("shader").style.width=(50-1*k)+"%"	
+	document.getElementById("logininput").style.opacity=1-k*0.01;
+	document.getElementById("logininput").style.width=(50-1*k)+"%"
+	k=k+1;
+	if (k>=100)
+		{
+		
+		//clearInterval(timer);
+		document.getElementById("loginbox").style.visibility = "hidden"; 
+		document.getElementById("loginTerminal").style.visibility = "visible"; 
+
+		clearInterval(window.timer3);
+		document.getElementById("loginTerminal").innerHTML = window.serverReply;
+		document.getElementById("loginTerminal").innerHTML +="</br>Check Update: ||||||||||||||||||||</br> NONE";
+		document.getElementById("loginTerminal").innerHTML +="</br>Starting interface renderer</br> 0%";
+		}
+	
+	
+	
 	}
 	
 

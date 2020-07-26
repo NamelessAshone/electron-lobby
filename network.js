@@ -1,4 +1,4 @@
-import {finalBoxEnlargeLeave} from './loginBtn.js';
+import {passwded} from './loginBtn.js';
 	var net = require('net');
 	var client = new net.Socket();
 
@@ -24,7 +24,7 @@ import {finalBoxEnlargeLeave} from './loginBtn.js';
 		if (window.serverReply.toString().includes("ACCEPTED"))
 			{
 			console.log(">>>>>>>>>>>>>LOGIN SUCCESSFUL!")
-			finalBoxEnlargeLeave();
+			passwded();
 			
 			}
 		
