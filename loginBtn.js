@@ -1,7 +1,12 @@
+//import {login} from './client.js';
 document.getElementById("loginbox").style.visibility = "hidden"; 
 var loginBtn=document.getElementById("loginbtn");
 loginBtn.addEventListener("mousedown",click);
 loginBtn.addEventListener("mouseup",clicked);
+var passwdForm=document.getElementById("passwd")
+passwdForm.addEventListener('change', accountChk);
+import {login} from './client.js';
+
 
 var i=0
 var j=0
@@ -15,7 +20,7 @@ function clicked()
 	loginBtn.style.background='white';
 	
 	
-	timer = setInterval(fadeLeave,10);
+	window.timer = setInterval(fadeLeave,10);
 
 	
 	
@@ -33,8 +38,8 @@ function fadeLeave()
 		loginBtn.style.visibility = "hidden";
 		document.getElementById("loginbox").style.opacity=0;
 		document.getElementById("loginbox").style.visibility = "visible"; 
-		clearInterval(timer);
-		timer2 = setInterval(ariseEnter,10);
+		clearInterval(window.timer);
+		window.timer2 = setInterval(ariseEnter,10);
 		}
 	
 	}
@@ -47,7 +52,7 @@ function ariseEnter()
 	if (j>=100)
 		{
 
-		clearInterval(timer2);
+		clearInterval(window.timer2);
 
 		
 		}
@@ -59,10 +64,14 @@ function accountChk()
 	{
 	var usr=document.getElementById("usr");
 	var passwd=document.getElementById("passwd");
-	//if (login(usr,passwd)== True)
-	//	{
+	if (login(usr.value,passwd.value))
+		{
 		//drawLobbyPage()
-	//	}
+		console.log(">>>>>>>>>>>>>LOGIN SUCCESSFUL!");
+		}
+	else{
+		console.log(">>>>>>>>>>>>>LOGIN FAILED!");
+	}
 	}
 	
 
