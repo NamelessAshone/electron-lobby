@@ -15,7 +15,9 @@
 	export function receive()
 	{
 		client.on('data', function(data) {window.serverReply=data; console.log('DATA: ' + window.serverReply);} );
-
+		while(window.serverReply === undefined) {
+		require('deasync').runLoopOnce();
+    		}
 	}
 	export function logout()
 	{
