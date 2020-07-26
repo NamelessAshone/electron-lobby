@@ -5,7 +5,7 @@ var PORT = 6000;
 var client = new net.Socket();
 client.connect(PORT, HOST, function() {
 
-    console.log('CONNECTED TO: ' + HOST + ':' + PORT);
+    console.log('CONNECTED TO: ' + ultirts.net + ':' + 8200);
 
     client.write('Hello!');
 
