@@ -1,12 +1,13 @@
 import {initNet,receive} from './network.js';
+import {send,logout} from './network.js';
 document.getElementById("loginbox").style.visibility = "hidden"; 
 var loginBtn=document.getElementById("loginbtn");
 loginBtn.addEventListener("mousedown",click);
 loginBtn.addEventListener("mouseup",clicked);
 var passwdForm=document.getElementById("passwd")
 passwdForm.addEventListener('change', accountChk);
-import {login} from './client.js';
 
+const crypto = require('crypto');
 
 var i=0
 var j=0
@@ -66,14 +67,8 @@ function accountChk()
 	initNet(); receive();
 	var usr=document.getElementById("usr");
 	var passwd=document.getElementById("passwd");
-	if (login(usr.value,passwd.value))
-		{
-		//drawLobbyPage()
-		console.log(">>>>>>>>>>>>>LOGIN SUCCESSFUL!");
-		}
-	else{
-		console.log(">>>>>>>>>>>>>LOGIN FAILED!");
-	}
+	send("LOGIN "+usr.value+" "+crypto.createHash('md5').update(passwd.value).digest("base64")+" * 0\n");
+	
 	}
 	
 

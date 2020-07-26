@@ -15,18 +15,22 @@
 	export function send(msg)
 	{
 	client.write(msg,function(msg) {console.log('sending'+msg);window.sendFinished=true} );
-	while(window.sendFinished === undefined) {
-		require('deasync').runLoopOnce();
-    		}
-	delete window.sendFinished;
+
 	}
 	
 	export function receive()
 	{
-		client.on('data', function(data) {window.serverReply=data; console.log('DATA from receive: ' + window.serverReply);} );
-		while(window.serverReply === undefined) {
-		require('deasync').runLoopOnce();
-    		}
+		client.on('data', function(data) {window.serverReply=data; console.log('DATA from receive: ' + window.serverReply);
+		if (window.serverReply.toString().startsWith("ACCEPTED"))
+			{
+			console.log(">>>>>>>>>>>>>LOGIN SUCCESSFUL!")
+			}
+		
+		
+		
+		
+		} );
+		
     		
 	}
 	
