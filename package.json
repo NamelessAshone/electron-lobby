@@ -1,6 +1,6 @@
 {
-  "name": "ulti lobby",
-  "version": "0",
+  "name": "ulti-lobby",
+  "version": "0.0.0",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
