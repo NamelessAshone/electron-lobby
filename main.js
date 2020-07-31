@@ -12,6 +12,7 @@ function createWindow() {
 	mainWindow.maximize();
 	mainWindow.setMenu(null)
 	mainWindow.loadFile("index.html");
+	mainWindow.webContents.openDevTools();
 
 	mainWindow.on("closed", function () {
 		mainWindow = null;
