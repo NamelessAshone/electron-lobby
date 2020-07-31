@@ -1,13 +1,15 @@
-const {app, BrowserWindow} = require('electron')
+const { app, BrowserWindow } = require("electron");
 
-let mainWindow
+let mainWindow;
 
-
-function createWindow () {
+function createWindow() {
   mainWindow = new BrowserWindow({
-    
     webPreferences: {
+			nodeIntegration: true,
+		},
+	});
 
+	mainWindow.maximize();
       nodeIntegration: true
     }
     
@@ -15,11 +17,11 @@ function createWindow () {
 
 mainWindow.maximize()
   mainWindow.loadFile('index.html')
+	mainWindow.loadFile("index.html");
 
-  mainWindow.on('closed', function () {
-    mainWindow = null
-  })
+	mainWindow.on("closed", function () {
+		mainWindow = null;
+	});
 }
 
-app.on('ready', createWindow)
-
+app.on("ready", createWindow);
