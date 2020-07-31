@@ -10,13 +10,7 @@ function createWindow() {
 	});
 
 	mainWindow.maximize();
-      nodeIntegration: true
-    }
-    
-  })
-
-mainWindow.maximize()
-  mainWindow.loadFile('index.html')
+	mainWindow.setMenu(null)
 	mainWindow.loadFile("index.html");
 
 	mainWindow.on("closed", function () {
