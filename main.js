@@ -1,25 +1,22 @@
-const {app, BrowserWindow} = require('electron')
+const { app, BrowserWindow } = require("electron");
 
-let mainWindow
+let mainWindow;
 
+function createWindow() {
+	mainWindow = new BrowserWindow({
+		webPreferences: {
+			nodeIntegration: true,
+		},
+	});
 
-function createWindow () {
-  mainWindow = new BrowserWindow({
-    
-    webPreferences: {
+	mainWindow.maximize();
+	mainWindow.setMenu(null)
+	mainWindow.loadFile("index.html");
+	mainWindow.webContents.openDevTools();
 
-      nodeIntegration: true
-    }
-    
-  })
-
-mainWindow.maximize()
-  mainWindow.loadFile('index.html')
-
-  mainWindow.on('closed', function () {
-    mainWindow = null
-  })
+	mainWindow.on("closed", function () {
+		mainWindow = null;
+	});
 }
 
-app.on('ready', createWindow)
-
+app.on("ready", createWindow);
