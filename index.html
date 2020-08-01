@@ -86,7 +86,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 
 .lobbyContent {
-	width: 30%;
+	width: 36%;
 	height: 90%;
 	position: absolute;
 	top: 6%;
@@ -96,7 +96,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 	border-radius: 8px;
 	box-shadow: 0 10px 20px rgba(100,100,100,0.5);
 	overflow: hidden;
-	z-index: 5;
+	z-index: 2;
 	padding: 50px;
 	box-sizing: border-box;
 }
@@ -141,8 +141,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
   text-transform: uppercase;
   letter-spacing: 4px;
   text-decoration: none;
-  width: 160px;
-  font-size: 24px;
+  width: 8vw;
+  font-size: 1.2vw;
   overflow: hidden;
   transition: 0.2s;
   top: 80%;
@@ -205,6 +205,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
   transition: 1s;
   transition-delay: 0.75s;
 }
+<!--GAME ENTRY--!>
 
 </style>
 </head>
@@ -237,10 +238,15 @@ body {font-family: Arial, Helvetica, sans-serif;}
 <!--LOBBY container-->
 
 	<div id="postLogin">
-
-		<div class="lobbyContainer" id="lobby"><div class="lobbyContent" id="lobby"><h1 style="color: white;">TEST 123</h1><p style="color: white;">drtyujgyftyg</p></div></div>
- 		<div class="fancyButton" style="position: absolute; left: 2%; top: 3%;"><a class="fancyButton_txt"href="#"><span></span><span></span><span></span><span></span>Campaign</a></div>
- 		<div class="fancyButton" style="position: absolute; left: 2%; top: 9%;"><a class="fancyButton_txt"href="#"><span></span><span></span><span></span><span></span>Multi Player</a></div>
+		<div class="fancyButton" style="position: absolute; left: 2%; top: 13%;"><a class="fancyButton_txt"href="#"><span></span><span></span><span></span><span></span>Campaign</a></div>
+ 		<div class="fancyButton" style="position: absolute; left: 2%; top: 18%;"><a class="fancyButton_txt"href="#"><span></span><span></span><span></span><span></span>Multi Player</a></div>
+		<div class="lobbyContainer" id="lobby"><div class="lobbyContent" id="lobby"><h1 style="position: absolute; color: white; top: 0%; left: 9%;">Lobby</h1>
+			<p style="color: white;">Join or start a clash</p>
+			 	<div style="cursor:pointer; width: 20%; background-color: white;" class="gameEntry" type="button" id = "gameEntry" onmousedown="this.style.background='#1a1a1a'"  onmouseleave="this.style.background='#ffffff'" onmouseover="this.style.background='#b6b8b3'">
+  				<p>Battle name:</p></br><p>Battle host</p><p>map</p>
+				</div>  
+		</div></div>
+ 		
 	</div>
 	
 </div>
