@@ -1,6 +1,6 @@
 const crypto = require("crypto");
 import { client } from "./network.js";
-
+document.getElementById("postLogin").style.visibility = "hidden";
 document.getElementById("loginbox").style.visibility = "hidden";
 document.getElementById("loginTerminal").style.visibility = "hidden";
 var loginBtn = document.getElementById("loginbtn");
@@ -8,6 +8,7 @@ var passwordForm = document.getElementById("passwd");
 
 client.on("ACCEPTED", (username) => {
 	window.timer3 = setInterval(finalBoxEnlargeLeave, 10);
+	window.username=username;
 });
 
 loginBtn.addEventListener("mousedown", () => {
@@ -68,5 +69,9 @@ function finalBoxEnlargeLeave() {
 			"</br>Check Update: ||||||||||||||||||||</br> NONE";
 		document.getElementById("loginTerminal").innerHTML +=
 			"</br>Starting interface renderer</br> 0%";
+		document.getElementById("loginTerminal").style.visibility = "hidden";
+		document.getElementById("postLogin").style.visibility = "visible";
+		document.getElementById("username").innerHTML =window.username
+
 	}
 }
