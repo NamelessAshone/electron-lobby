@@ -49,7 +49,9 @@ class Client extends EventEmitter {
 				});
 		});
 	}
+	
 
+	
 	login(username, password, cpu = 0, localIP = "*") {
 		const passwordHash = crypto
 			.createHash("md5")
@@ -59,11 +61,15 @@ class Client extends EventEmitter {
 		const message =
 			"LOGIN " + username + " " + passwordHash + " " + cpu + " " + localIP;
 		this.send(message);
+		
+		window.timer4 = setInterval(this.send, 10000,"PING");
+		
 	}
 
 	logout(reason = "unknown") {
 		this.send("EXIT " + reason);
 		this.socket.destroy();
+		clearInterval(window.timer4);
 	}
 
 	send(message, display = false) {

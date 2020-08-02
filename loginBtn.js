@@ -1,15 +1,13 @@
 const crypto = require("crypto");
-import { client } from "./network.js";
+const Client = require("./client");
+
 document.getElementById("postLogin").style.visibility = "hidden";
 document.getElementById("loginbox").style.visibility = "hidden";
 document.getElementById("loginTerminal").style.visibility = "hidden";
 var loginBtn = document.getElementById("loginbtn");
 var passwordForm = document.getElementById("passwd");
 
-client.on("ACCEPTED", (username) => {
-	window.timer3 = setInterval(finalBoxEnlargeLeave, 10);
-	window.username=username;
-});
+
 
 loginBtn.addEventListener("mousedown", () => {
 	loginBtn.style.background = "#1a1a1a";
@@ -21,9 +19,15 @@ loginBtn.addEventListener("mouseup", () => {
 });
 
 passwordForm.addEventListener("change", () => {
+	var client = new Client();
+	client.connectToServer();
 	var username = document.getElementById("usr").value;
 	var password = document.getElementById("passwd").value;
 	client.login(username, password);
+	client.on("ACCEPTED", (username) => {
+	window.timer3 = setInterval(finalBoxEnlargeLeave, 10);
+	window.username=username;
+});
 });
 
 var i = 0;
