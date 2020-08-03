@@ -67,6 +67,10 @@ class Client extends EventEmitter {
 
 	logout(reason = "unknown") {
 		this.send("EXIT " + reason);
+		self.endConnection();
+	}
+
+	endConnection() {
 		this.socket.destroy();
 		clearInterval(window.timer4);
 	}

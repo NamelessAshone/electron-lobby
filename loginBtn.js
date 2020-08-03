@@ -1,6 +1,3 @@
-const crypto = require("crypto");
-const Client = require("./client");
-
 document.getElementById("postLogin").style.visibility = "hidden";
 document.getElementById("loginbox").style.visibility = "hidden";
 document.getElementById("loginTerminal").style.visibility = "hidden";
@@ -19,16 +16,17 @@ loginBtn.addEventListener("mouseup", () => {
 });
 
 passwordForm.addEventListener("change", () => {
-	window.client = new Client();
-	window.client.connectToServer();
 	var username = document.getElementById("usr").value;
 	var password = document.getElementById("passwd").value;
+	window.client.connectToServer();
 	window.client.login(username, password);
 	window.client.on("ACCEPTED", (username) => {
-	window.timer3 = setInterval(finalBoxEnlargeLeave, 10);
-	window.username=username;
-	//setInterval(() => { client.send("PING", true); }, 1000);
-});
+		window.timer3 = setInterval(finalBoxEnlargeLeave, 10);
+		window.username = username;
+	});
+	window.client.on("DENIED", (reason) => {
+		window.client.endConnection();
+	});
 });
 
 var i = 0;
