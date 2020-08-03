@@ -27,6 +27,7 @@ passwordForm.addEventListener("change", () => {
 	client.on("ACCEPTED", (username) => {
 	window.timer3 = setInterval(finalBoxEnlargeLeave, 10);
 	window.username=username;
+	//setInterval(() => { client.send("PING", true); }, 1000);
 });
 });
 
