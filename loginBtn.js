@@ -19,12 +19,12 @@ loginBtn.addEventListener("mouseup", () => {
 });
 
 passwordForm.addEventListener("change", () => {
-	var client = new Client();
-	client.connectToServer();
+	window.client = new Client();
+	window.client.connectToServer();
 	var username = document.getElementById("usr").value;
 	var password = document.getElementById("passwd").value;
-	client.login(username, password);
-	client.on("ACCEPTED", (username) => {
+	window.client.login(username, password);
+	window.client.on("ACCEPTED", (username) => {
 	window.timer3 = setInterval(finalBoxEnlargeLeave, 10);
 	window.username=username;
 	//setInterval(() => { client.send("PING", true); }, 1000);

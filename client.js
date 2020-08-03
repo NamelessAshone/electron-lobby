@@ -61,7 +61,7 @@ class Client extends EventEmitter {
 		const message =
 			"LOGIN " + username + " " + passwordHash + " " + cpu + " " + localIP;
 		this.send(message);
-		setInterval(() => { this.send("PING", true); }, 1000);
+		setInterval(() => { this.send("PING"); }, 20000);
 		
 	}
 

@@ -86,7 +86,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 
 .lobbyContent {
-	width: 36%;
+	width: 40%;
 	height: 90%;
 	position: absolute;
 	top: 6%;
@@ -222,10 +222,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 
 .chatContent {
-	width: 40%;
-	height: 86%;
+	width: 35%;
+	height: 50%;
 	position: absolute;
-	top: 10%;
+	top: 45%;
 	right: 1%;  
 	margin-top:0px;
 	margin-left: 0px;
@@ -255,6 +255,12 @@ body {font-family: Arial, Helvetica, sans-serif;}
 	background-position: center top;
 	background-size: cover;
 	background-attachment: fixed;
+}
+
+li {
+display:inline;
+  display:inline-block;
+  padding:1px 1%;
 }
 </style>
 </head>
@@ -293,12 +299,14 @@ body {font-family: Arial, Helvetica, sans-serif;}
 		
 		<div class="lobbyContainer" id="lobby"><div class="lobbyContent" id="lobby"><h1 style="position: absolute; color: white; top: 0%; left: 9%; font-family: JuneBug2;">Lobby</h1>
 			<p style="color: white; font-family: JuneBug;">What's happening around the galaxy</p>
-			<!--to be inserted by js-->
-			 	<div style="cursor:pointer; width: 20%; background-color: rgba(100,100,100,0.3); " class="gameEntry" type="button" id = "gameEntry"
-				 onmousedown="this.style.background='#1a1a1a'" onmouseleave="this.style.background='#ffffff';this.style.opacity=0.3;" onmouseover="this.style.background='#ffffff';this.style.opacity=1;" onmouseup="this.style.background='#ffffff';this.style.opacity=1;">
-  				<p>Battle name:</p></br><p>Battle host</p><p>map</p>
-				</div>  
-			<!--to be inserted by js-->
+			<ul id="gameEntry">
+			
+			
+
+
+			
+			
+			</ul>
 		</div></div>
  		
  		
