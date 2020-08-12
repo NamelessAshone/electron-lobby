@@ -1,3 +1,8 @@
+const Config = require('electron-config');
+const isRememberLogin = new Config();
+const usernameMem = new Config();
+const passwordMem = new Config();
+
 document.getElementById("postLogin").style.visibility = "hidden";
 document.getElementById("loginbox").style.visibility = "hidden";
 document.getElementById("loginTerminal").style.visibility = "hidden";
@@ -15,11 +20,38 @@ loginBtn.addEventListener("mouseup", () => {
 	window.timer = setInterval(fadeLeave, 10);
 });
 
+
+
+if (isRememberLogin.get('isRemembered')=='true')
+	{
+	document.getElementById("usr").value=usernameMem.get('username');
+	document.getElementById("passwd").value=passwordMem.get('password');
+	document.getElementById("rememberName").checked = true;
+	document.getElementById("loginbox").onmousemove = function(){if (window.isLoggedin == true){return;}logMeIn();};
+	}
+
+
+
+
+
+
+
+
 function logMeIn(){
+	window.isLoggedin = true;
 	var username = document.getElementById("usr").value;
 	var password = document.getElementById("passwd").value;
 	window.client.connectToServer();
 	window.client.login(username, password);
+
+	
+	if (document.getElementById("rememberName").checked == true){
+		isRememberLogin.set('isRemembered', 'true');
+		usernameMem.set('username', username);
+		passwordMem.set('password', password);
+ 	 } else {
+		isRememberLogin.set('isRemembered', 'false');
+	}
 	window.client.on("ACCEPTED", (username) => {
 		window.timer3 = setInterval(finalBoxEnlargeLeave, 10);
 		window.username = username;
