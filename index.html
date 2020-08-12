@@ -21,7 +21,7 @@
 				
 				<input id="usr" style="top:20%; position:absolute;left:2%;" type="text" placeholder="Enter Username" name="uname" required>
 				</br>
-				<input id="passwd" style="top:50%; position:absolute;left:2%;" type="password" placeholder="Enter Password" name="psw" required >
+				<input onchange="logMeIn()" id="passwd" style="top:50%; position:absolute;left:2%;" type="password" placeholder="Enter Password" name="psw" required >
 				<p style="top:-5%; position:absolute;left:42%;font-size: 1.7vw;text-align: left;font-family: JuneBug2;">Ultimatum Hivemind NeuralNetwork</p>
 				<p style="top:36%; position:absolute;left:-0.5%;font-size: 4vw;text-align: left;font-family: JuneBug;">CONNECT</p>
 				<p style="top:70%; position:absolute;left:45%;font-size: 1vw;text-align: left">///   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///</p>
@@ -38,7 +38,7 @@
 		<img src="assets/leftmenuCircuit.png" style="z-index: 0; left: 0.9vw; top: 8%; height: 100%; position: absolute;">
 		
 		<div class="lobbyContainer" id="lobby"><div class="lobbyContent" id="lobby"><h1 style="position: absolute; color: white; top: 0%; left: 9%; font-family: JuneBug2;">Lobby</h1>
-			<p style="color: white; font-family: JuneBug;">What's happening around the galaxy</p>
+			<p style="color: white; font-family: JuneBug3;">What's happening around the galaxy</p>
 			<ul id="gameEntry" style="top: 30%; position:absolute width:100%;" >
 			
 			
@@ -51,8 +51,19 @@
  		
  		
  		<div class="chatContainer" id="chat"><div class="chatContent" id="chat"><h1 style="position: absolute; color: white; top: 0%; left: 9%;font-family: JuneBug2;">COM</h1>
-			<p style="color: white; font-family: JuneBug;">Intergalactic Communication</p>
-		</div></div>
+			<p style="color: white; font-family: JuneBug3;">Intergalactic Communication</p>
+			<input onchange="chatSubmit()" id="chatInput" style="bottom:1%; width:100%; position:absolute;left:2%;" type="text" placeholder=">>> " name="chatInput" required>
+			<div class="limitingframe" style="width:100% ;height:80%;top:17%; overflow:hidden;position:absolute;">
+				<div class="chatUserContent" id="chatUserContent" style ="bottom: 3%;position: absolute; overflow: hidden;">
+			
+				</div>
+			</div>
+			
+			</div>
+			
+		
+		
+		</div>
  		
  		<div class="profile" style="right: 10%; position: absolute;"><h1 class="username" id="username" style="mix-blend-mode: screen;background: #2196f3;text-align: center;position: absolute; padding:4px;">UserName</h1></div>
  		
@@ -61,7 +72,8 @@
 </div>
 
 <script type="module" src="network.js"></script>
-<script type="module" src="loginBtn.js"></script>
+<script src="loginBtn.js"></script>
 <script type="module" src="lobby.js"></script>
+<script  src="chat.js"></script>
 </body>
 </html>

@@ -15,7 +15,7 @@ loginBtn.addEventListener("mouseup", () => {
 	window.timer = setInterval(fadeLeave, 10);
 });
 
-passwordForm.addEventListener("change", () => {
+function logMeIn(){
 	var username = document.getElementById("usr").value;
 	var password = document.getElementById("passwd").value;
 	window.client.connectToServer();
@@ -27,7 +27,7 @@ passwordForm.addEventListener("change", () => {
 	window.client.on("DENIED", (reason) => {
 		window.client.endConnection();
 	});
-});
+}
 
 var i = 0;
 var j = 0;
