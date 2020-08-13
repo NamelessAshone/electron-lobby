@@ -6,13 +6,13 @@ function msgPut(Q){
 }
 
 
-
-
-
-
 function chatSubmit() {
 	msgQueue[0]=window.username;
 	msgQueue[1] = document.getElementById("chatInput").value;
 	msgPut(msgQueue) //display sent message
 	console.log("fired!")
+}
+
+function chatPut(Name) {   //call this function back on joining chat
+document.getElementById("chatList").innerHTML +="<p style=\"background-color: #2196f3;color: white;\">"+Name+"</p>";
 }
