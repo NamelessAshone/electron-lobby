@@ -14,5 +14,8 @@ function chatSubmit() {
 }
 
 function chatPut(Name) {   //call this function back on joining chat
-document.getElementById("chatList").innerHTML +="<p style=\"background-color: #2196f3;color: white;\">"+Name+"</p>";
+document.getElementById("chatList").innerHTML +="<p style=\"background-color: #2196f3;color: white; padding: 5px;\">"+Name+"</p>";
 }
+chatPut('top10%');
+chatPut('topsmurfs');
+chatPut('ultirtsTerminal');
