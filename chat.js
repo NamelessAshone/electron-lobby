@@ -8,7 +8,7 @@ function msgPut(Q){
 
 function chatSubmit() {
 	msgQueue[0]=window.username;
-	msgQueue[1] = document.getElementById("chatInput").value;
+	msgQueue[1] = document.getElementById("name").value;
 	msgPut(msgQueue) //display sent message
 	console.log("fired!");
 }

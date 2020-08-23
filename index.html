@@ -61,17 +61,18 @@
  		
  			<div class="chatContent" id="chat"><h1 style="position: absolute; color: white; top: 0%; left: 9%;font-family: JuneBug2;">COM</h1>
 				<p style="color: white; font-family: JuneBug3;">Intergalactic Communication</p>
-				<input onchange="chatSubmit()" id="chatInput" style="bottom:1%; width:100%; position:absolute;left:2%;" type="text" placeholder=">>> " name="chatInput" required>
-				<div class="limitingframe" style="width:100% ;height:80%;top:17%; overflow:hidden;position:absolute;">
+				
+				<div class="form__group field" style="bottom:1%; width:100%; position:absolute;left:2%;">
+  					  <input onchange="chatSubmit()" type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+  					<label for="name" class="form__label" id="formLabel">Name</label>
+				</div>
+				
+				<div class="limitingframe" style="width:100% ;height:74%;top:17%; overflow:hidden;position:absolute;">
 					<div class="chatUserContent" id="chatUserContent" style ="bottom: 3%;position: absolute; overflow: hidden;">
 			
 					</div>
 				</div>
-			
 			</div>
-			
-		
-		
 		</div>
  		
  		<div class="profile" style="right: 10%; position: absolute;"><h1 class="username" id="username" style="mix-blend-mode: screen;background: #2196f3;text-align: center;position: absolute; padding:4px;">UserName</h1></div>

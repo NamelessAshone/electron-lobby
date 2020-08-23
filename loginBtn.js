@@ -107,6 +107,8 @@ function finalBoxEnlargeLeave() {
 		document.getElementById("loginTerminal").style.visibility = "hidden";
 		document.getElementById("postLogin").style.visibility = "visible";
 		document.getElementById("username").innerHTML =window.username
+		document.getElementById("formLabel").innerHTML =window.username+ " >>> " ;
 
 	}
 }
+
