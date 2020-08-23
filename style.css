@@ -307,9 +307,7 @@ color: #255784;
   padding-top: 5px;
   padding-bottom: 5px;
 }
-#chatInput::placeholder { 
-    text-decoration-line: none; //does not work along with text-decoration: none; either, every other selector works and overwrites
-}
+
 
 
 
