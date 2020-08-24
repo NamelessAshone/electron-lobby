@@ -370,7 +370,7 @@ color: #255784;
 }
 
 .limitingframe::-webkit-scrollbar {
-  width: 15px;
+  width: 12px;
 }
 
 .limitingframe::-webkit-scrollbar-track {
@@ -378,17 +378,44 @@ color: #255784;
 }
  
 .limitingframe::-webkit-scrollbar-thumb {
-  background: white; 
-}
-
-.limitingframe::-webkit-scrollbar-thumb:hover {
   background: grey; 
 }
 
+.limitingframe::-webkit-scrollbar-thumb:hover {
+  background: white; 
+}
 
+/*user cards*/
 
+.userCard{
+ overflow: hidden;
+  background-image: linear-gradient(to right, rgba(33,150,243,1), rgba(33,150,243,0));
+  mix-blend-mode: screen;
 
+}
 
+.userCard:hover{
 
+  background: white;
+  box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+  transition-delay: 0s;
+  mix-blend-mode: screen;
+}
+
+.friendlimitingFrame::-webkit-scrollbar {
+  width: 12px;
+}
+
+.friendlimitingFrame::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+}
+ 
+.friendlimitingFrame::-webkit-scrollbar-thumb {
+  background: grey; 
+}
+
+.friendlimitingFrame::-webkit-scrollbar-thumb:hover {
+  background: white; 
+}
 
 
