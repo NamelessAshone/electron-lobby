@@ -107,8 +107,20 @@ function finalBoxEnlargeLeave() {
 		document.getElementById("loginTerminal").style.visibility = "hidden";
 		document.getElementById("postLogin").style.visibility = "visible";
 		document.getElementById("username").innerHTML =window.username
-		document.getElementById("formLabel").innerHTML =window.username+ " >>> " ;
-
+		
+		/*document.getElementById("chatList").innerHTML +="<p id=\""+displayedChat+"\"><span onclick=\"chatSwt(&#39;"+displayedChat+"&#39;,displayedChat)\"style=\"background-color: #2196f3;color: white; padding: 5px;\">"+displayedChat.substring(0, 6)+"</span><span onclick=\"chatDel(&#39;"+displayedChat+"&#39;)\" id=\"chatClose\" class=\"chatClose\" >&#x2715;</span></p>";
+document.getElementById("chatContainer").innerHTML +=" <div class=\"chatContent\" id=\"chat"+displayedChat+"\"><h1 style=\"position: absolute; color: white; top: 0%; left: 9%;font-family: JuneBug2;\">"+displayedChat+"</h1><p style=\"color: white; font-family: JuneBug3;\">"+'Intergalactic Quantum Com'+"</p><div class=\"form__group field\" style=\"bottom:1%; width:100%; position:absolute;left:2%;\"><input onchange=\"chatSubmit()\" type=\"input\" class=\"form__field\" placeholder=\""+window.username+"\" name=\"name\" id=\'name"+displayedChat+"\' required /><label for=\"name"+displayedChat+"\" class=\"form__label\" id=\"formLabel\">"+window.username+"</label></div><div class=\"limitingframe\" style=\"width:107% ;height:78%;top:2%; overflow:scroll; overflow-x: hidden; position:relative;\"><div class=\"chatUserContent\" id=\"chatUserContent"+displayedChat+"\" style =\"bottom: 3%;position: relative; overflow: hidden;\"><!--chat content to be inserted--></div></div></div>";*/
+		window.client.joinChanel("main")
+		window.client.on("JOIN", (CHANAME) => {
+			chatPut(CHANAME)
+		});
+		var msgSaid = [];
+		
+		window.client.on("SAID", (channel,user,msg) => {
+			msgSaid[0]=user;
+			msgSaid[1]=msg;
+			msgPut(msgSaid)
+		});
 	}
 }
 

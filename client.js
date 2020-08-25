@@ -50,7 +50,14 @@ class Client extends EventEmitter {
 		});
 	}
 	
-
+	joinChanel(chanName) {
+		const message ="JOIN " +chanName;
+		this.send(message);
+	}
+	say(channel, something) {
+		const message ="SAY " +channel+" "+something;
+		this.send(message);
+	}
 	
 	login(username, password, cpu = 0, localIP = "*") {
 		const passwordHash = crypto
