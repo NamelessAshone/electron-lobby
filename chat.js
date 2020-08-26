@@ -14,6 +14,10 @@ function chatSubmit() {
 }
 
 function chatDel(Name) {   
+    if(typeof(document.getElementById(Name)) == 'undefined' || document.getElementById(Name) == null){
+       console.log("channel "+Name+" does not exist");
+       return;
+    } 
 	console.log("removing "+Name);
 	document.getElementById(Name).parentNode.removeChild(document.getElementById(Name));
 	document.getElementById('chat'+Name).parentNode.removeChild(document.getElementById('chat'+Name));
@@ -42,6 +46,10 @@ document.getElementById("chatContainer").innerHTML +=" <div class=\"chatContent\
 }
 
 function chatSwt(toChat,fromChat){
+        if(toChat == fromChat) { 
+     	    console.log("already on "+fromChat);
+	    return;
+        }
 	console.log("switching to "+toChat);
 	if (fromChat!="disposed") {document.getElementById("chat"+fromChat).style.visibility = "hidden";}
 	document.getElementById("chat"+toChat).style.visibility = "visible";
