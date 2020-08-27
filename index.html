@@ -37,12 +37,28 @@
 		<div class="fancyButton" style="position: absolute; left: 2%; top: 13%;z-index: 1;"><a class="fancyButton_txt" href="#"><span></span><span></span><span></span><span></span>Campaign</a></div>
  		<div class="fancyButton" style="position: absolute; left: 2%; top: 18%; z-index: 1;"><a class="fancyButton_txt" href="#"><span></span><span></span><span></span><span></span>Multi Player</a></div>
 		<img src="assets/leftmenuCircuit.png" style="z-index: 0; left: 0.9vw; top: 8%; height: 100%; position: absolute;">
-		<div class="lobbyContainer" id="lobby"><div class="lobbyContent" id="lobby"><h1 style="position: absolute; color: white; top: 0%; left: 9%; font-family: JuneBug2;">Lobby</h1>
-			<p style="color: white; font-family: JuneBug3;">What's happening around the galaxy</p>
-			<ul id="gameEntry" style="top: 30%; position:absolute width:100%;" >
+		<div class="lobbyContainer" id="lobbyContainer">
+			<div class="lobbyContent" id="lobbyContent"><h1 style="position: absolute; color: white; top: 0%; left: 9%; font-family: JuneBug2;">Lobby</h1>
+				<p style="color: white; font-family: JuneBug3;">What's happening around the galaxy</p>
+				<ul id="gameEntry" style="top: 30%; position:absolute width:100%;" >
 			<!--game entry to be inserted-->
-			</ul>
-		</div></div>
+				</ul>
+			</div>
+			
+			<!--pregame panel-->
+			<div class="lobbyContent" id="prebattle" style="visibility: hidden;"><h1 id="pregameTitle" style="position: absolute; color: white; top: 0%; left: 9%; font-family: JuneBug2;">gameName</h1>
+				<p id="hostSays"style="color: white; font-family: JuneBug3;">hostsaid something</p>
+				
+
+				
+
+				
+	
+			
+			
+			</div><!--end of prebattlepanel-->
+			
+		</div>
  		
  		
  		<div class="chatContainer" id="chatContainer">
@@ -78,9 +94,11 @@
 </div> <!--canvas closure-->
 
 <script type="module" src="network.js"></script>
+<script src="preBattlezone.js"></script>
 <script src="loginBtn.js"></script>
 <script type="module" src="lobby.js"></script>
 <script  src="chat.js"></script>
 <script  src="freunds.js"></script>
+<script src="Chart.min.js"></script>
 </body>
 </html>
