@@ -1,7 +1,8 @@
 var displayedChat="main";
 var msgQueue=["User","0000"];
 function msgPut(Q){
-	document.getElementById("chatUserContent"+displayedChat).innerHTML +="<p style=\"display:inline-block; color: white; font-family: JuneBug2; background-color: rgba(100, 100, 100, 0.5);\">"+Q[0]+">>></p> <p style=\"display:inline-block; color: white; font-family: JuneBug; \">"+ Q[1]+"</p></br>";
+	 //if(username == Q[0]) {  } 
+	document.getElementById("chatUserContent"+Q[2]).innerHTML +="<p style=\"display:inline-block; color: white; font-family: JuneBug2; background-color: rgba(100, 100, 100, 0.5);\">"+Q[0]+">>></p> <p style=\"display:inline-block; color: white; font-family: JuneBug; \">"+ Q[1]+"</p></br>";
 }
 
 function chatSubmit() {
