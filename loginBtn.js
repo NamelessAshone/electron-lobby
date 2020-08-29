@@ -119,6 +119,7 @@ document.getElementById("chatContainer").innerHTML +=" <div class=\"chatContent\
 		window.client.on("SAID", (channel,user,msg) => {
 			msgSaid[0]=user;
 			msgSaid[1]=msg;
+			msgSaid[2]=channel;
 			msgPut(msgSaid)
 		});
 	}
